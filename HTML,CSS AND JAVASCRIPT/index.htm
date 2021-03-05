@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            func
+        </title>
+        <style>
+            *{
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+            .container{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background: black;
+            }
+            div{
+                margin: 20px;
+                padding: 10px;
+            }
+            input{
+                padding: 10px;
+                width: 350px;
+                text-align: center;
+                border: 1px solid white;
+                outline: none;
+            }
+            #submit{
+                position: relative;
+                width: 50%;
+                left: 30%;
+                border-radius: 20px;
+                font-family: sans-serif;
+                width: 150px;
+                background: green;
+                border: 1px solid white;
+                margin-bottom: 10px;
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+       <form class="container"onsubmit="return validation()" action="www.google.com" name="myform">
+           <div>
+               <input type="text" placeholder="USERNAME" id="user"  autocomplete="off"><br>
+               <span id="username" style="color:red"></span>
+           </div>
+           <div>
+                <input type="password" placeholder="PASSWORD" id="pass"  autocomplete="off"><br>
+                <span id="password" style="color:red"></span>
+            </div>
+            <div>
+                <input type="password" placeholder="CONFIRM PASSWORD" id="confpass" autocomplete="off"><br>
+                <span id="confirmpass" style="color:red"></span>
+            </div>
+            <div>
+                <input type="tel" placeholder="MOBILE NO" id="mobile" autocomplete="none"><br>
+                <span id="mobileno" style="color:red"></span>
+            </div>
+            <div>
+                <input type="text" placeholder="EMAIL ID" id="email" name="user" autocomplete="none"><br>
+                <span id="emailid" style="color:red"></span>
+            </div>
+            <input type="submit" value="submit" id="submit">
+           
+       </form>
+       <script>
+           function validation(){
+               var user=document.getElementById("user").value;
+               var pass=document.getElementById("pass").value;
+               var confpass=document.getElementById("confpass").value;
+               var mobile=document.getElementById("mobile").value;
+               var email=document.getElementById("email").value;
+               if(user==""){
+                   document.getElementById("username").innerHTML="please fill the username";
+                   return false;
+               }
+                if(!isNaN(user)){
+                    document.getElementById("username").innerHTML="please enter charchters only";
+                    return false;
+                }
+               if(pass==""){
+                document.getElementById("password").innerHTML="please fill the password";
+                return false;
+                }
+                if(pass.length<=2 || pass.length>20){
+                    document.getElementById("password").innerHTML="password must be greater than 2 and less than 20";
+                     return false;
+                }
+                if(confpass==""){
+                    document.getElementById("confirmpass").innerHTML="please fill the confirm password";
+                    return false;
+                }
+                if(!(pass==confpass)){
+                    document.getElementById("confirmpass").innerHTML="password does not matched";
+                    return false;
+                }
+                if(mobile==""){
+                    document.getElementById("mobileno").innerHTML="please fill the mobile number";
+                     return false;
+                }
+                if(mobile.length!=10){
+                    document.getElementById("mobileno").innerHTML="enter valid mobile number";
+                     return false;
+                }
+                if(email==""){
+                    document.getElementById("emailid").innerHTML="please fill the email id";
+                    return false;
+                }
+                if(email.indexOf("@")==0){
+                    document.getElementById("emailid").innerHTML="please fill the valid email id";
+                    return false;
+                }
+                if(email.charAt(email.length-4)!="." || email.charAt(email.length-3)!="."){
+                    document.getElementById("emailid").innerHTML="please fill the valid email id";
+                    return false;
+                }
+           }
+       </script>
+    </body>
+</html>

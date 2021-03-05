@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            JAVASRIPT
+        </title>
+        <style>
+            *
+            {
+                margin: 0;
+                padding: 0;
+            }
+            .container{
+                background:black;
+                padding: 10px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                border-radius: 20px;
+            }
+            input{
+                margin: 10px;
+                height: 20px;
+                border-radius: 10px;
+                text-align: center;
+                height: 30px;
+                outline: none;
+                border: none;
+            }
+            #register{
+                margin-left: 50px;
+                padding: 3px;
+                border-radius: 10px;
+                border: none;
+                background-color: green;
+                outline: none;
+                cursor: pointer;
+            }
+            #login{
+                margin-left: 60px;
+                padding: 3px;
+                border-radius: 10px;
+                border: none;
+                background: green;
+                width: 50px;
+                outline: none;
+                cursor: pointer;
+            }
+            p{
+                margin: 4px;
+                color: white;
+                text-align: center;
+            }
+            p a{
+                text-decoration: none;
+            }
+            .register
+            {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form class="login" name="login">
+                <input type="text" placeholder="USERNAME" name="uname" autocomplete="off"><br>
+                <input type="password" placeholder="PASSWORD" name="psd"><br>
+                <button onclick="log()" id="login">Login</button>
+                <p>New?<a onclick="x()" name="click"
+                    href="#">Register</a></p>
+            </form>
+            <form class="register" name="register">
+                <input type="text" placeholder="FIRST NAME"><br>
+                <input type="text" placeholder="LAST NAME"><br>
+                <input type="text" placeholder="EMAIL ID"><br>
+                <button onclick="reg()" id="register">Register</button>
+                <p>Already Register<a href="#">Login</a></p>
+            </form>
+        </div>
+        <script>
+            function log(){
+               var input=document.forms["login"]["click"].value;
+               if(input==true)
+               {
+                   var x=document.getElementsByClassName("register");
+                   document.getElementsByClassName("register").value;
+                   
+            }
+            
+        </script>
+    </body>
+</html>

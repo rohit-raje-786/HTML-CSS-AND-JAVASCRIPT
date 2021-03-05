@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SLIDER</title>
+        <style>
+            body{
+                background-color: black;
+            }
+            h1{
+                color: white;
+                font-family: cursive;
+                text-align: center;
+                margin-top: -60px;
+                
+            }
+            .main{
+                width: 70%;
+                height: 400px;
+                border: 1px solid white;
+                position: absolute;;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                box-shadow: 1px 1px 10px 8px whitesmoke;
+                animation: slider 9s infinite linear;
+            }
+            @keyframes slider {
+                0%{ background: url(https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7cfe0e0674f6598c38ad.jpg);
+                background-size: cover;}
+
+                35%{background: url(https://wallpapercave.com/wp/uUqxVHp.jpg);background-size: cover; }
+
+                75%{background: url(https://free4kwallpapers.com/uploads/originals/2015/10/21/beautiful-nature--hd-wallpaper.jpg);background-size: cover;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class='main'>
+            <h1>CSS ANIMATION SLIDER</h1>
+        </div>
+    </body>
+</html>

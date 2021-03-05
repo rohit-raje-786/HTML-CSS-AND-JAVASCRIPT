@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ROCK PAPER SCISSOR
+        </title>
+        <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            *{padding: 0;
+            margin:0;
+        box-sizing: border-box;}
+        body{
+            font-family: 'Asap', sans-serif;
+            background: black;
+            
+        }
+        header{
+            text-align: center;
+            background: #fff;
+            line-height: 3;
+        }
+        .score_card{
+            width: 200px;
+            border: 1px solid white;
+            margin: 20px auto;
+            color:#fff;
+            position: relative;
+            text-align: center;
+        }
+        .user_label{
+            background: red;
+            position: absolute;
+            left: -20px;
+            top: 30%;
+            padding: 5px;
+        }
+        .comp_label{
+            background: red;
+            position: absolute;
+            right: -20px;
+            top: 30%;
+            padding: 5px;
+        }
+        .card{
+            font-size: 70px;
+        }
+        .choices{
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        }
+        .choice
+        {
+            margin:0 30px;
+            padding: 10px;
+            border: 4px solid white;
+            border-radius: 50%;
+            color:aqua;
+            position: relative;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .result{
+            color: #fff;
+            position: relative;
+            margin: 10px auto;
+            font-size: 30px;
+    
+            text-align: center;
+        }
+        .last{
+            color: #fff;
+            position: relative;
+            left: 46%;
+            top: 10px;
+            font-size: 18px;
+
+        }
+        .red_glow{
+            background: #fc121b;
+        
+            transition: all .5s ease-in-out;
+        
+        }
+
+        .green_glow{
+            background: #4dcc7d;
+
+            transition: all .5s ease-in-out;
+        
+        }
+
+        .gray_glow{
+            background: yellow;
+            transition: all .5s ease-in-out;
+            
+        }
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Rock Paper Scissor
+            </h1>
+        </header>
+            <div class="score_card">
+            <div class="score">
+                <p class="user_label">user</p>
+                <p class="comp_label">comp</p>
+            </div>
+            <div class="card">
+                <span id="user_score">0</span>:<span id="comp_score">0</span>
+            </div> 
+            </div>
+            <div class="result">
+                <p>
+                </p>
+            </div>
+            <div class="choices">
+                <div class="choice">
+                    <i class="fa fa-hand-rock-o" aria-hidden="true" id="r" ></i>   
+                </div>
+                <div class="choice">
+                    <i class="fa fa-hand-paper-o" aria-hidden="true" id="p" ></i>
+                </div>
+                <div class="choice">
+                    <i class="fa fa-hand-scissors-o" aria-hidden="true" id="s" ></i>
+                </div>
+            </div>
+            <div class="last">
+                <p>
+                    Make your move
+                </p>
+            </div>
+            <script type="text/javascript">
+                let userscore=0;
+                let compscore=0;
+                const userscore_span=document.getElementById("user_score");
+                const compscore_span=document.getElementById("comp_score");
+                const result_p=document.querySelector(".result");
+                const rock_div=document.getElementById("r");
+                const paper_div=document.getElementById("p");
+                const scissor_div=document.getElementById("s");
+
+                function getcomputerchoice(){
+                    const choice=["r","p","s"];
+                    const index=Math.floor((Math.random()*3));
+                    return choice[index];
+                }
+                function game(userChoice)
+                {
+                    const computerchoice=getcomputerchoice();
+                    switch(userChoice+computerchoice){
+                        case "pr":
+                        case "sp":
+                        case "rs":
+                        wins(userChoice,computerchoice)
+                        break;
+                        case "rp":
+                        case "ps":
+                        case "sr":
+                        lose(userChoice,computerchoice);
+                        break;
+                        case "pp":
+                        case "rr":
+                        case "ss":
+                        draw(userChoice,computerchoice);
+                        break;
+                    }
+                }
+
+                function wins(userChoice,computerchoice)
+                {
+                    userscore++;
+                    userscore_span.innerHTML=userscore;
+                    result_p.innerHTML=`${convert(userChoice)}(USER)BEATS ${convert(computerchoice)}(COMP). YOU WIN!`;
+                    document.getElementById(userChoice).classList.add('green_glow');
+                    setTimeout(function(){document.getElementById(userChoice).classList.remove('green_glow')},350);
+                }
+                
+                function lose(userChoice,computerchoice)
+                {
+                    compscore++;
+                    compscore_span.innerHTML=compscore;
+                   
+                    result_p.innerHTML=`${convert(computerchoice)}(COMP) BEATS ${convert(userChoice)}(USER). YOU LOOSE!`;
+                    document.getElementById(userChoice).classList.add('red_glow');
+                    setTimeout(function(){document.getElementById(userChoice).classList.remove('red_glow')},350);
+                
+                }
+
+                function draw(userChoice,computerchoice)
+                {
+                    result_p.innerHTML="IT'S A DRAW!!!";
+                    document.getElementById(userChoice).classList.add('gray_glow');
+                    setTimeout(function(){document.getElementById(userChoice).classList.remove('gray_glow')},350);
+                    
+                }
+                function convert(x){
+                    if(x=="r")
+                    {
+                        return 'ROCK';
+                    }
+                    if(x=="p")
+                    {
+                        return 'PAPER';
+                    }
+                    else{
+                        return 'SCISSOR';
+                    }
+                }
+
+                function main(){
+
+                    rock_div.addEventListener("click",function(){
+                        game("r");
+                     })
+     
+                     paper_div.addEventListener("click",function(){
+                        game("p");
+                     })
+     
+                     scissor_div.addEventListener("click",function(){
+                         game("s");
+                     })
+                }
+                main();
+            </script>
+    </body>
+</html>

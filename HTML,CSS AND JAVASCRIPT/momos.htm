@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            MOMOS KINGS
+        </title>
+        <style>
+            *
+            {
+                padding: 0;
+                margin:0;
+            }
+            body{
+                background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(momoimg.jpg);
+                background-position: center;
+                background-size: cover;
+                height: 100vh;
+                box-sizing: border-box;
+                font-family: cursive;
+                position: relative;
+                margin: 10px;
+            }
+            .menu-bar ul{
+                list-style: none;
+                font-size: 13px;
+            }
+            .menu-bar ul li{
+                border: 1px solid white;
+                width: 150px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                float: left;
+                position: relative;
+                word-spacing: 3px;
+        
+
+            }
+            .menu-bar ul li a{
+                text-decoration: none;
+                text-transform: uppercase;
+                color: white;
+                display: block;
+            }
+            .menu-bar li a:hover{
+                background: black;
+            }
+            .logo{
+                float: right;
+                width: 150px;
+                height: 80px;
+                margin: 10px;
+            }
+            .menu-bar .fa 
+            {
+                padding: 8px;
+            }
+            .menu-bar ul ul{
+                display: none;
+                
+            }
+            .menu-bar ul li:hover>ul{
+                display: block;
+            
+            }
+            .box
+            {
+                width: 300px;
+                padding: 40px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background: #191919;
+                text-align: center;
+                border-radius: 20px;
+            }
+            .box h1{
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 25px;
+                word-spacing: 2px;
+                margin: 10px;
+            } 
+           .box p{
+               color: white;
+               text-transform: capitalize;
+           }
+           .box:hover{
+               border:1px solid white;
+           }
+        </style>
+        <link rel='stylesheet' href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="menu-bar">
+            <div>
+                <img class="logo" src="m.jpg" style="background: linear-gradient( rgba(0,0,0,0.5),rgba(0,0,0,0.5);">
+            </div>
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i>non-veg momos</a>
+                    <ul>
+                        <li><a>simple</a></li>
+                        <li><a>shezwan</a></li>
+                        <li><a>platter</a></li>
+                        <li><a>honkong</a></li>
+                        <li><a>combination</a></li>
+                        <li><a>oil fried</a></li>
+                        <li><a>steamed</a></li>
+                </ul>
+                </li>
+                <li><a href="#"><i class="fa fa-cutlery" aria-hidden="true"></i>veg momos</a>
+                    <ul>
+                        <li><a>simple</a></li>
+                        <li><a>shezwan</a></li>
+                        <li><a>panner</a></li>
+                        <li><a>honkong</a></li>
+                        <li><a>soyabeen</a></li>
+                        <li><a>oil fried</a></li>
+                        <li><a>steamed</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i>payments</a></li>
+                <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>contact us</a>
+                    <ul>
+                        <li><a>ph-7021007903</a></li>
+                        <li><a>rp589006@gmail.com</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <form class="box">
+            <h1>about us</h1>
+            <p>momo king was started in 1998.since from then we are providing great tasty momos.we use secret ingredients to make our special momos .</p>
+            <p>to enjoy taste visit our nearest stores.</p>
+        </form>
+    </body>
+</html>

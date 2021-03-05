@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            project 1
+        </title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            section{
+                background: url("img1.jpg");
+                background-size: cover;
+                height: 100vh;
+                color: white;
+            }
+            .head
+            {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            h1{
+                margin-bottom: 20px;
+            }
+            button{
+                position: relative;
+                left: 50px;
+                padding: 10px;
+                width: 300px;
+            }
+            .modal-parent{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background: black;
+                color: white;
+                animation:1s drop;
+                transition: 1s ease;
+                display: none;
+                
+            }
+            .parent{
+                padding: 20px;
+                position: relative;
+                
+            }
+            .x{
+                position: absolute;
+                top: 0;
+                left: 95%;
+                margin-top: 10px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            @keyframes drop {
+                0%{
+                    top: -100px;
+                }
+                100%{
+                    top: 50%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    <section>
+        <div class="head">
+            <h1>WELCOME TO RAJE RESTAURANT</h1>
+            <button type="button">CLICK FOR MENU</button>
+        </div>
+    </section>
+    <div class="modal-parent">
+        <div class="parent">
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quas accusantium libero non tempora at itaque distinctio assumenda aliquam. Et expedita sapiente numquam doloremque optio id earum aut dolorem recusandae.
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet similique nihil nostrum quaerat. Placeat voluptatem nemo excepturi cum nostrum quia dicta quod. Minima earum corporis in dolorem sed, sunt hic!Lorem
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus laborum enim libero cumque quod in nostrum labore, consequuntur neque explicabo placeat tempora repudiandae, dolorem voluptates quaerat optio repellat nisi nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, perspiciatis! Corrupti a, consectetur vel maiores eaque, officiis nulla, deleniti quo fugiat doloribus ad! Voluptatibus, obcaecati! Accusamus, nesciunt. Nam, reiciendis nisi.
+           </p>
+            <span class="x" draggable="true">&times;</span>
+        </div>
+    </div>
+    <script>
+        var parent=document.querySelector(".modal-parent"),
+        btn=document.querySelector("button"),
+        x=document.querySelector(".x"),
+        section=document.querySelector("section");
+        btn.addEventListener("click",appear);
+        x.addEventListener("click",disappear);
+        parent.addEventListener("click",go);
+        function appear(){
+            parent.style.display="block";
+            section.style.filter="blur(10px)";
+        }
+        function disappear(){
+            parent.style.display="none";
+            section.style.filter="blur(0px)";
+        }
+        function go(e){
+            if(e.target.className=="modal-parent"){
+                parent.style.display="none";
+                section.style.filter="blur(0px)";
+            }
+        }
+    </script>
+    </body>
+</html>

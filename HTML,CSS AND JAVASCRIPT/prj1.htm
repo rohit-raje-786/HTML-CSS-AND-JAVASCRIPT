@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>
+            chinese items
+        </title>
+        <style>
+           body{
+               margin: 0;
+               padding: 0;
+               font-family: sans-serif;
+           }
+           header{
+               background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(img1.jpg);
+               background-position: center;
+               height: 100vh;
+               background-size: cover;
+            }
+            ul
+            {
+                list-style: none;
+                float: right;
+            }
+            ul li
+            {
+                display: inline-block;
+                margin-top: 10px;
+            }
+            ul li a
+            {
+                text-decoration: none;
+                padding: 5px 20px;
+                color:white;
+                font-family: sans-serif;
+                font-weight: 500;
+                border: 2px solid black ;
+                transition: 0.6s;
+                font-size: 20px;
+                background-color: black;
+            }
+            ul li a:hover
+            {
+                background-color:red;
+                color: white;
+            }
+            .main{
+                max-width: 1500px;
+                margin: auto;
+            }
+            .box h1
+            {
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            .box
+            {
+                width: 300px;
+                padding: 40px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color:#191919;
+                text-align: center;
+                border-radius: 20px;
+            }
+            .box input[type="text"],.box input[type="password"]
+            {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 10px;
+                padding: 10px 14px;
+                border: 2px solid blue;
+                margin-left: 52px;
+                text-align: center;
+                color: white;
+                border-radius: 24px;
+                outline: none;
+            }
+            .box input[type="submit"]
+            {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 10px;
+                padding: 10px 14px;
+                margin-left: 120px;
+                border: 2px solid blue;
+                text-align: center;
+                color: white;
+                border-radius: 24px;
+                outline: none;
+                cursor: pointer;
+
+            }
+            .box input[type="text"]:focus,.box input[type="password"]:focus
+            {
+                border-color: #2ecc71;;
+            }
+            .box input[type="submit"]:hover
+            {
+                background-color: #2ecc71 ;
+            }
+            nav ul li a
+            {
+                float:right;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="main">
+                <nav>
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>Non-Veg</a></li>
+                    <ul>
+                        <li><a>chicken tikka masala</a></li>
+                        <li><a>chicken bhunna masala</a></li>
+                        <li><a>chicken kebab </a></li>
+                        <li><a>chicken biryani</a></li>
+                        <li><a>chicken tandoori</a></li>
+                        <li><a>chicken lollipop</a></li>
+                    </ul>
+                    <li><a>Veg</a></li>
+                    <li><a>Others</a></li>
+                </ul>
+            </nav>
+                <form class="box" action="www.google.com">
+                    <h1>Login</h1>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+        </header>
+    </body>
+</html>

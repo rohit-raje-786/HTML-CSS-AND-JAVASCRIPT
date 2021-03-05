@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            navbar
+        </title>
+        <style>
+            *
+            {
+                padding: 0px;
+                margin: 0px;
+            }
+            #menu ul{
+                list-style: none;
+            }
+            #menu ul li{
+                background-color: red;
+                border: 1px solid white;
+                width: 120px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                float: left;
+                position: relative;
+                border-radius: 10px;
+                outline: none;
+            }
+            #menu ul li a{
+                text-decoration: none;
+                color: white;
+                text-transform: uppercase;
+                display: block;
+            }
+            #menu ul li a:hover{
+                background-color: green;
+                border-radius: 10px;
+                outline: none;
+            }
+            #menu ul ul{
+                position: absolute;
+                text-transform: uppercase;
+                color: white;
+                display: none;
+            }
+            #menu ul li:hover>ul{
+                display: block;
+            }
+           #menu ul ul ul{
+               margin-left: 120px;
+               top: 0px;
+           }
+        </style>
+    </head>
+    <body>
+        <div id="menu">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">news</a></li>
+                <li><a href="#">country</a>
+                    <ul>
+                        <li><a href="#">india</a>
+                            <ul>
+                                <li><a>delhi</a></li>
+                                <li><a>mumbai</a></li>
+                                <li><a>banglore</a></li>
+                                <li><a>pune</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">england</a></li>
+                        <li><a href="#">australia</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

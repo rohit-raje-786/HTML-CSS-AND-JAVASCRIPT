@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS</title>
+    </head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            margin-left: 10px;
+        }
+        header{
+           width: 100%;
+           background:black;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           height:60px;
+           color: white;
+        }
+        #search
+        {
+            padding: 10px;
+            outline: none;
+            margin-right: 10px;
+            border: none;
+            box-shadow: 0 0 10px white;
+        }
+        .add-items{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #add{
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .items{
+           
+            margin-top: 10px;
+            <!-- border: 2px solid black; -->
+        }
+        .single-items{
+            display: block;
+           
+            font-size: 20px;   
+            padding: 10px; 
+        }
+        li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        button{
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <header class="title">
+                <h1>ITEMS</h1>
+                <input type="text" placeholder="search" id="search">
+            </header>
+            <div class="contents">
+                <div class="add-items">
+                    <input type="text" placeholder="add-item" id="add">
+                </div>
+                <div class="items">
+                    <ul class="single-items">
+                        <li>item1<button draggable="none" class="close-btn">x</button></li>
+                        <li>item2<button draggable="none" class="close-btn">x</button></li>
+                        <li>item3<button draggable="none" class="close-btn">x</button></li>
+                        <li>item4<button draggable="none" class="close-btn">x</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+            const search=document.querySelector("#search");
+            const add=document.querySelector("#add");
+            const closebtns=document.querySelector(".items");
+            const singles=document.querySelector('.single-items');
+            add.addEventListener("keypress",func);
+            closebtns.addEventListener('click',cross);
+            search.addEventListener('keyup',searchitem);
+            function func(e){
+                if(e.keyCode===13)
+                {
+                        if(e.target.value!='')
+                        var li=document.createElement('li');
+                        var btn=document.createElement('button');
+                        btn.className='close-btn';
+                        btn.appendChild(document.createTextNode('x'));
+                        li.appendChild(document.createTextNode(e.target.value));
+                        li.appendChild(btn);
+                        singles.appendChild(li);
+                       add.value="";
+                }
+            }
+            function cross(e){
+                if(e.target.className==='close-btn')
+                {
+                    var li=e.target.parentElement;
+                    singles.removeChild(li);
+                }
+            }
+            function searchitem(e){
+                   var items=singles.getElementsByTagName('li');
+                    Array.from(items).forEach(function(item){
+                        var itemname=item.firstChild.textContent;
+                        if(itemname.toLowerCase().indexOf(e.target.value.toLowerCase())!=-1){
+                            item.style.display='flex';
+                        }
+                        else{
+                            item.style.display='none';
+                        }                     
+                    });
+                   
+                
+            }
+        </script>
+    </body>
+</html>

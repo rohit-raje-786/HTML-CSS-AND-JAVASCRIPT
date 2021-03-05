@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MENU</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: 'Montserrat', sans-serif;
+            }
+            .menu
+            {
+                text-align: right;
+                background: lightblue;
+            }
+            ul li{
+                display: inline-block;
+                padding: 20px;
+                list-style: none;
+                margin-right:40px ;
+                text-align: center;
+                
+            }
+            ul li a{
+                text-decoration: none;
+                font-size: 18px;
+                color:#076FDE;
+                border-bottom: 1px solid #fff;
+            }
+            ul li a:hover{
+                padding: 10px;
+            }
+            span
+            {
+                position: fixed;
+                margin-left:95%;
+                margin-top: 20px;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            @media only screen and (max-width:808px){
+                .cross{
+                    display: block;
+                }
+                ul li
+                {
+                    display: block;
+                    
+                }
+                ul
+                {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+            <div class="menu">
+                <span class="cross" onclick="func()" >&#9776;</span>
+                <ul id="list">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">GAMES</a></li>
+                    <li><a href="#">GALLERY</a></li>
+                    <li><a href="#">MUSIC</a></li>
+                    <li><a href="#">MOVIES</a></li>
+                </ul>
+        </div>
+        <script>
+            function func(){
+                var x=document.getElementById("list");
+                if(x.style.display=="block")
+                {
+                    x.style.display="none";
+                }
+               else{
+                x.style.display="block";
+            }
+        }
+        </script>
+    </body>
+</html>

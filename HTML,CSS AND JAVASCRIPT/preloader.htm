@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            preloader
+        </title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .loader
+            {
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: lightgray;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .disappear{
+                animation: 1s vanish forwards;
+            }
+            @keyframes vanish {
+                100%{
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+            .img{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loader">
+            <img src="preloader.gif">
+        </div>
+        <div class="img">
+            <img src="https://source.unsplash.com/500x500">
+        </div>
+        <script>
+            var loader=document.querySelector(".loader");
+            window.addEventListener("load",vanish);
+            function vanish(){
+                loader.classList.add("disappear");
+            }
+        </script>
+    </body>
+</html>

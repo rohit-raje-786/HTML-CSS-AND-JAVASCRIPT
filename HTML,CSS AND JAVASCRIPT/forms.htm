@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            forms
+        </title>
+    </head>
+    <body>
+        <forms name='nit.html' method='get' name='myform'>
+            <label>USERNAME:</label>
+            <input type='text' name='uname' value='enter valid username'></br>
+            <label>PASSWORD:</label>
+            <input type='password' name='pwd' value='enter valid user password'></br>
+            <input type='submit' name='sn' value="sign in">
+            <input type='reset' name='can' value='cancel' disabled="disabled">
+        </forms>
+        <form>
+        <select multiple='multiple'>
+        <option>select any one option</option>
+        <option  value='ls'>javascript</option>
+        <option>php</option>
+        <option>angularjs</option>
+        <option>nodejs</option>
+        <option>dojo</option>
+        </select>
+    </form>
+    <form action="nit1.html" name="myform" id="form 1">
+        <label style="color: green;">select the gender</label>
+        <input type="radio" name="rd" value="male" checked='on'>MALE
+        <input type="radio" name="rd" value="male">FEMALE
+        <input type="radio" name="rd" value="male">OTHERS
+    </form>
+    <form>
+        <fieldset style="border:2px double #ff0000; border-radius:20px">
+        <legend align='center' style="color:blue;">SELECT YOUR COURSES</legend>
+        <input type="checkbox" name="ht1" checked='on'>HTML
+        <input type="checkbox" name="ht2" >CSS
+        <input type="checkbox" name="ht3" >CSS3
+        <input type="checkbox" name="ht4" >javascript
+        <input type="checkbox" name="ht5" >nodejs
+    </fieldset>
+    </form>
+    <dl>
+        <dt>HTML</dt>
+        <dd>HTML is the standard markup language for creating Web pages. What is HTML? HTML stands for Hyper Text Markup Language; HTML describes the structure of ..</dd>
+    </dl>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            side bar
+        </title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(https://c4.wallpaperflare.com/wallpaper/57/266/415/space-background-blue-dots-wallpaper-preview.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 100vh;
+            }
+            .side-bar{
+                width: 200px;
+                height: 400px;
+                
+                
+                
+            }
+            .side-bar ul{
+                list-style: none;
+                float: left;
+                
+            }
+            .side-bar ul li{
+                margin-right: 20px;
+                margin-bottom: 20px;
+                display: inline-block;
+                position: relative;
+                margin-top: 8px;
+                border: 1px solid whitesmoke;
+                padding: 10px;
+                background:#141369;
+                letter-spacing: 2px;
+                border-radius: 10px;
+                border-left: hidden;
+            }
+            ul li a{
+                text-decoration: none;
+                padding: 20px;
+                color: white;
+            }
+            ul li a:hover{
+                
+                margin-left: 10px;
+                border-radius: 10px;
+                
+            }
+            .w{
+                position: absolute;
+                top: 0;
+            }
+            .search{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                width: 200px;
+                height: 40px;
+                border-radius: 20px;
+                text-align: center;
+                background:#191919;
+                border: none;
+                color: white;
+                transition: 1s;
+                outline: none;
+                border: 1px solid #3498db;
+            }
+            .search:focus{
+                border: 1px solid #2ecc71;
+                width:300px ;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input class="search" type="text" placeholder="Search">
+        </div>
+        <div class="side-bar">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">GAMES</a></li>
+                <li><a href="#">LIBRARY</a></li>
+                <li><a href="#">CRICKET</a></li>
+                <li><a href="#">BLOGS</a></li>
+                <li><a href="#">MOVIES</a></li>
+                <li><a href="#">BOLLYWOOD</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">PAYMENT</a></li>
+            </ul>
+        </div>
+        
+           
+    
+    </body>
+</html>
